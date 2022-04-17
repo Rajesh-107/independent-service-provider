@@ -10,7 +10,7 @@ const topShots =[
 
 const TopShots = () => {
     return (
-        <div className='container'>
+        <div id='shots' className='container'>
             <h2 className='text-center text-danger pt-5'>My Popular Shots</h2>
             <div className='row pt-5'>
                 {
