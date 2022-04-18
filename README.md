@@ -1,5 +1,11 @@
 # Getting Started with Create React App
 
+- This is App you can easily interaction
+- There is two kind of authentication method
+- One is Google authentication and other one Gmail/password
+- This is app named Wild PhotoGrapher
+- BackEnd used Firebase
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -68,4 +74,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
 # independent-service-provider-Rajesh-107

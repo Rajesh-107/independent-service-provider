@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import './SignUp.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -7,6 +7,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 
 
 const SignUp = () => {
+    const [agree, setAgree] =useState(false);
     const [
         createUserWithEmailAndPassword,
         user,
@@ -30,11 +31,13 @@ const SignUp = () => {
         const password = e.target.password.value;
         console.log(email, password);
 
-        createUserWithEmailAndPassword(email,password)
+        if(agree){
+            createUserWithEmailAndPassword(email,password);
+        }
     }
 
     return (
-       <div className='register-form'>
+       <div className='signup-form'>
             <div className='container w-50 mx-auto'>
             <h2 className='text-dark text-center mt-2'>Please Sign Up</h2>
             <form onSubmit={handleSignUp}>
@@ -44,9 +47,10 @@ const SignUp = () => {
                 <input type="email" name="email" placeholder='Enter email' id="" />
                 <label htmlFor="password">Password</label>
                 <input type="password" name="password" placeholder='Type password' id="" />
-               
-                <input 
-                className=' btn btn-primary ' type="submit" value="SignUp" />
+                <input onClick={() => setAgree(!agree)} type="checkbox" name="terms" id="terms" />
+                <label className={agree ? 'ps-2 text-primary' : 'ps-2 text-danger'} htmlFor="terms">Accept Terms and Condition</label>
+                <input disabled={!agree}
+                className='btn btn-primary mt-2' type="submit" value="SignUp" />
             </form>
             <p>Already have an account? <Link to='/login' onClick={navigateLogin} className='text-decoration-none text-danger pe-auto'>Please Login</Link> </p>
         </div>
