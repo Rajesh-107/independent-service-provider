@@ -6,7 +6,7 @@ const Footer = () => {
     const date = new Date()
     const year = date.getFullYear();
     return (
-        <footer>
+        <footer className='text-center text-lg-start'>
       <div className='footer'>
         <div className='logo-footer-section'>
           
