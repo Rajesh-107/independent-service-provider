@@ -4,6 +4,8 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
@@ -24,8 +26,8 @@ const Login = () => {
         if(user){
             navigate(from, {replace:true});
         }
-        if (loading) {
-            return <p className='w-50 mx-auto'><Spinner animation="grow" variant="dark" /> <Spinner animation="grow" variant="dark" />
+        if (loading || sending) {
+            return <p style={{height:'400px'}} className='w-100 d-flex justify-content-center align-items-center'><Spinner animation="grow" variant="dark" /> <Spinner animation="grow" variant="dark" />
             <Spinner animation="grow" variant="dark" />
              </p>;
           }
@@ -35,8 +37,13 @@ const Login = () => {
           }
           const resetPassword = async() =>{
               const email = emailRef.current.value;
-              await sendPasswordResetEmail(email);
-              alert('sent email');
+              if(email){
+                await sendPasswordResetEmail(email);
+                toast("sent email, Don't forget Check your spam message");
+              }
+              else{
+                  toast('Please enter your email address');
+              }
           }
 
     const handleSubmit = e => {
@@ -71,8 +78,9 @@ const Login = () => {
   {errorElement}
     </Form>
    <p>New to Here? <Link to='/signup' onClick={navigateSignUp} className='text-decoration-none text-danger pe-auto'>Please SignUp</Link> </p>
-   <p>Forget Password? <Link to='/signup' onClick={resetPassword} className='text-decoration-none text-danger pe-auto'>Reset Password</Link> </p>
+   <p>Forget Password? <button onClick={resetPassword} className='btn btn-link text-decoration-none text-danger pe-auto'>Reset Password</button> </p>
    <SocialLogin></SocialLogin>
+    <ToastContainer />
 </div>
     );
 };

@@ -1,43 +1,43 @@
 [{
         "id": 1,
-        "name": "ENGINE DIAGNOSTIC",
-        "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "name": "Clipping Path Service",
+        "price": "$300",
+        "description": "Clipping Path Service is a popular Photoshop photo editing technique. The clipping path is a closed vector path or a shape which we used to make the subject’s outline by using the pen tool.",
         "img": "https://i.ibb.co/qsCrjfd/wild1.png"
     },
     {
         "id": 2,
-        "name": "WHEEL ALIGNMENT",
-        "price": "100",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "name": "Background Removal Service",
+        "price": "$100",
+        "description": "Background removal is a method of removing an ugly or clumsy background of an image. It can enhance the beauty of your pictures.",
         "img": "https://i.ibb.co/NLWYBt9/wild2.png"
     },
     {
         "id": 3,
-        "name": "OIL CHANGING",
-        "price": "150",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "name": "Photo Retouching Service",
+        "price": "$150",
+        "description": "All photos are not perfect, although it was shot by a professional photographer. Sometimes we get worse photos because of our lighting setup. To give it the perfect look, photographers need professional photo retouching.",
         "img": "https://i.ibb.co/X7XmJ6z/wild3.png"
     },
     {
         "id": 4,
-        "name": "BRAKE REPARING",
-        "price": "180",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "name": "Color Changing and Correction",
+        "price": "$180",
+        "description": "Color correction is a basic photo manipulation process that includes adjustment of the color, saturation, white balance, exposure of an image.",
         "img": "https://i.ibb.co/d5Dv9mJ/wild4.png"
     },
     {
         "id": 5,
-        "name": "WASH AND GLASSING",
-        "price": "100",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "name": "Shadow Making Services",
+        "price": "$100",
+        "description": "A shadow helps subjects look grounded in the subject’s background. If you will make your product shadow then it looks more realistic and attractive.",
         "img": "https://i.ibb.co/PwTqZBd/wild5.png"
     },
     {
         "id": 6,
-        "name": "COMPLETE ANALYSIS",
-        "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
+        "name": "Photo Enhancement Service",
+        "price": "$300",
+        "description": "Photo Enhancement is a process of fixing digital photos. Improving an image is effectively a picture’s stylization. Select color or black and white, darkening the image corner, improving picture quality.",
         "img": "https://i.ibb.co/QjXHF11/wild6.png"
     }
 ]

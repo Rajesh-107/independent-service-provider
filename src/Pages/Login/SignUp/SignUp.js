@@ -1,9 +1,11 @@
 import React, { useRef, useState } from 'react';
 import './SignUp.css';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { async } from '@firebase/util';
+import { Spinner } from 'react-bootstrap';
 
 
 const SignUp = () => {
@@ -13,27 +15,34 @@ const SignUp = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
+      ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+      const [updateProfile, updating , updateError] = useUpdateProfile(auth);
 
+     
     const navigate = useNavigate();
     const navigateLogin = () =>{
         navigate('/login');
     }
 
-    if(user){
-        navigate('/home');
+    if(loading || updating){
+        return <p style={{height:'400px'}} className='w-100 d-flex justify-content-center align-items-center'><Spinner animation="grow" variant="dark" /> <Spinner animation="grow" variant="dark" />
+        <Spinner animation="grow" variant="dark" />
+         </p>;
     }
 
-    const handleSignUp = e =>{
+    const handleSignUp = async e =>{
         e.preventDefault();
         const name = e.target.name.value;
         const email= e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password);
 
-        if(agree){
-            createUserWithEmailAndPassword(email,password);
-        }
+        
+          await createUserWithEmailAndPassword(email,password);
+          await updateProfile({displayName: name});
+          alert('Updated Profile');
+          navigate('/home')
+        
     }
 
     return (
